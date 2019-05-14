@@ -27,7 +27,7 @@ class Board:
 
     # check if a player has won
     def checkWin(self,row,col,val):
-        return self.__checkHorizontalRows(self,val) or self.__checkVerticalRows(self,val)
+        return self.__checkHorizontalRows(self,val) or self.__checkVerticalRows(self,val) or self.__checkBackwardDiagonal(self,val) or self.__checkForwardDiagonal(self,val)
 
     # checks horizontal rows for win
     def __checkHorizontalRows(self,val):
@@ -66,7 +66,7 @@ class Board:
 
         return count == self.boardDimension
 
-    # check backward diagonal for win
+    # check forward diagonal for win
     def __checkForwardDiagonal(self, val):
         rowIndex = self.boardDimension - 1
         colIndex = 0

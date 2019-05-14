@@ -1,20 +1,24 @@
 import pygame, sys
-
-pygame.init()
-
-size = width, height = 320, 240
-speed = [2, 2]
-black = 0, 0, 0
-
-screen = pygame.display.set_mode(size)
+import board
 
 
+def setBoard():
+    pygame.init()
+    size = width, height = 320, 240
+    return pygame.display.set_mode(size)
 
-while 1:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT: sys.exit()
 
 
-    screen.fill(black)
 
-    pygame.display.flip()
+
+
+
+
+def main():
+    screen = setBoard()
+    while 1:
+        pygame.display.flip()
+
+
+if __name__ == '__main__':
+    main()
